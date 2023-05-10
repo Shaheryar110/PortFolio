@@ -4,6 +4,7 @@ import styles from "@/styles/Home.module.css";
 import Hero from "@/components/Hero";
 import StarsCanvas from "@/components/canvas/Stars";
 import About from "@/components/About";
+import WorkExperience from "@/components/WorkExperience";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
           <Hero />
         </div>
         <About />
+        <WorkExperience />
       </main>
     </>
   );

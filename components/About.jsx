@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import backend from "../public/assets/backend.png";
 import web from "../public/assets/web.png";
 import Image from "next/image";
-import { Tilt } from "react-tilt";
+// import { Tilt } from "react-tilt";
 
 const About = () => {
   const services = [
@@ -21,34 +21,26 @@ const About = () => {
     },
   ];
   const ServiceCard = ({ index, title, icon }) => (
-    <Tilt
-    // glareEnable={true}
-    // tiltMaxAngleX={50}
-    // tiltMaxAngleY={50}
-    // perspective={100}
-    // glareColor={"red"}
-    >
-      <Stack sx={{ height: "100%", marginX: "2rem" }}>
-        <motion.div
-          className="About"
-          variants={fadeIn("right", "spring", index * 0.5, 0.75)}
+    <Stack sx={{ height: "100%", marginX: "2rem" }}>
+      <motion.div
+        className="About green-pink-gradient"
+        variants={fadeIn("right", "spring", index * 0.5, 0.75)}
+      >
+        <div
+          options={{
+            max: 45,
+            scale: 1,
+            speed: 450,
+          }}
+          className="aboutCArd"
         >
-          <div
-            options={{
-              max: 45,
-              scale: 1,
-              speed: 450,
-            }}
-            className="aboutCArd"
-          >
-            <Image src={icon} alt="web-development" className="Aboutcardimg" />
-            {/* <img src={icon}  /> */}
+          <Image src={icon} alt="web-development" className="Aboutcardimg" />
+          {/* <img src={icon}  /> */}
 
-            <h3 className="AboutCardText">{title}</h3>
-          </div>
-        </motion.div>
-      </Stack>
-    </Tilt>
+          <h3 className="AboutCardText">{title}</h3>
+        </div>
+      </motion.div>
+    </Stack>
   );
   const [isMounted, setIsMounted] = useState(false);
 
@@ -57,7 +49,7 @@ const About = () => {
   }, []);
   return (
     <>
-      <Stack sx={{ width: "100%", height: "100%", marginTop: "5rem" }}>
+      <Stack sx={{ width: "100%", height: "100%", marginY: "8rem" }}>
         <motion.div
           initial={{ x: -500 }}
           animate={isMounted ? { x: 0 } : {}}
